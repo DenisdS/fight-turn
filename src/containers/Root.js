@@ -1,11 +1,14 @@
 import React from "react"
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import App from "../components/templates/app/app"
+import App from "../components/templates/App"
 
 const Root = () => {
   return(
-    <App />    
-  )    
+    <Router>
+      <App />
+    </Router>
+  )
 }
 
 export default Root;
