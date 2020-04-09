@@ -4,7 +4,7 @@ const Game = () => {
   const [player1, setPlayer1] = useState(100)
   const [player2, setPlayer2] = useState(100)
 
-  const [winner, setWinner] = useState('')
+  const [winner, setWinner] = useState(null)
 
   const rangeDamage = () => {
     return (Math.floor(Math.random() * 101))
@@ -17,14 +17,12 @@ const Game = () => {
   useEffect(() => {
     if(player1 < 1){
       setWinner('Player1')
-      console.log(winner)
     }
   }, [player1])
 
   useEffect(() => {
     if(player2 < 1){
       setWinner('Player2')
-      console.log(winner)
     }
   }, [player2])
 
@@ -71,6 +69,8 @@ const Game = () => {
         <h2>Player 2</h2>
         <p>{player2}</p>
       </section>
+
+      <p>{winner}</p>
 
       <button type="button" onClick={() => combat('player1')}>P1 Attack</button>
       <button type="button" onClick={() => combat('player2')}>P2 Attack</button>
